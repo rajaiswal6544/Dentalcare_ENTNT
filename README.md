@@ -1,70 +1,188 @@
-# Getting Started with Create React App
+ 
+# 🦷 Dental Center Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A comprehensive dental practice management dashboard built with **React** and modern web technologies. This system enables dental centers to manage patients, appointments, and treatment records with **role-based access control**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Live Demo
 
-### `npm start`
+🔗 [View Live Application](https://dentalcare-entnt-w829.vercel.app/)  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 📋 Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🔑 Core Functionality
 
-### `npm run build`
+- ✅ **User Authentication** (Admin / Patient)
+- 🧾 **Patient Management** — Full CRUD operations
+- 📅 **Appointment Management** — Schedule, update & track
+- 🗓️ **Calendar View** — Monthly & weekly views
+- 📂 **File Upload** — Upload treatment records & invoices
+- 📊 **Dashboard Analytics** — Revenue, patients, appointments KPIs
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 👥 User Roles
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Admin (Dentist)**: Full system access
+- **Patient**: View appointments & treatment history only
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### ⚙️ Technical Highlights
 
-### `npm run eject`
+- 📱 **Responsive Design** — Mobile-first layout
+- 💾 **Data Persistence** — Stored in `localStorage`
+- 📎 **File Handling** — Base64 encoding
+- ✅ **Form Validation** — Built-in checks
+- ✨ **Modern UI** — Built with Tailwind CSS & React Icons
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🛠️ Tech Stack
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+| Tech | Purpose |
+|------|---------|
+| **React 18** | Frontend Framework |
+| **JavaScript (ES6+)** | Programming Language |
+| **Tailwind CSS** | Styling |
+| **React Icons** | Icons |
+| **React Router DOM** | Routing |
+| **React Context API** | State Management |
+| **localStorage** | Data Persistence |
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 📦 Installation & Setup
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### ▶️ Local Development
 
-### Code Splitting
+```bash
+# Clone the repo
+git clone https://github.com/rajaiswal6544/Dentalcare_ENTNT
+cd Dentalcare_ENTNT
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Install dependencies
+npm install
+# or
+yarn install
 
-### Analyzing the Bundle Size
+# Start the dev server
+npm start
+# or
+yarn start
+````
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Navigate to: [http://localhost:3000](http://localhost:3000)
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🔐 Demo Credentials
 
-### Advanced Configuration
+### 👨‍⚕️ Admin Access
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* **Email**: `admin@entnt.in`
+* **Password**: `admin123`
 
-### Deployment
+### 🧑‍🦰 Patient Access
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+* **Email**: `john@entnt.in`
+* **Password**: `patient123`
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🏗️ Project Structure
+
+```
+src/
+├── components/         # Shared UI components
+│   ├── Layout.js
+│   ├── ProtectedRoute.js
+│   ├── AdminDashboard.js
+│   └── PatientDashboard.js
+├── contexts/           # Context providers
+│   ├── AuthContext.js
+│   └── DataContext.js
+├── pages/              # Route-level pages
+│   ├── LoginPage.js
+│   ├── Dashboard.js
+│   ├── Patients.js
+│   ├── Appointments.js
+│   └── Calendar.js
+├── App.js              # App entry
+├── index.js            # ReactDOM renderer
+└── index.css           # Tailwind + global styles
+```
+
+---
+
+## 🧠 State Management
+
+* `AuthContext`: Manages login state and user role
+* `DataContext`: Stores patients and appointments in `localStorage`
+
+---
+
+## 🗃️ Data Models
+
+### 👤 User
+
+```js
+const user = {
+  id: 'string',
+  role: 'Admin' | 'Patient',
+  email: 'string',
+  patientId: 'string' // if Patient
+}
+```
+
+### 🧾 Patient
+
+```js
+const patient = {
+  id: 'string',
+  name: 'string',
+  dob: 'string',
+  contact: 'string',
+  healthInfo: 'string'
+}
+```
+
+### 📅 Appointment / Incident
+
+```js
+const incident = {
+  id: 'string',
+  patientId: 'string',
+  title: 'string',
+  description: 'string',
+  comments: 'string',
+  appointmentDate: 'string',
+  cost: number,
+  treatment: 'string',
+  status: 'Scheduled' | 'Completed' | 'Cancelled',
+  nextDate: 'string',
+  files: [{ name: 'string', url: 'string' }]
+}
+```
+
+---
+
+## 🚀 Deployment
+
+### 🔄 Vercel
+
+## 📄 License
+
+This project is for **educational and assessment purposes**. All rights reserved.
+
+---
+
+## 🙋 Made By
+
+**Raj Jaiswal**
+📧 Email: [rajaiswaldev24@gmail.com](mailto:rajaiswaldev24@gmail.com)
+🌐 GitHub: [rajaiswal6544](https://github.com/rajaiswal6544)
+
+---
+
